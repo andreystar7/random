@@ -170,7 +170,7 @@
       <block type="movement_stop" id="380"></block>
     </next>
   </block>
-  <block type="procedures_defreturn" id="195" inline="false" x="314" y="-5">
+  <block type="procedures_defreturn" id="195" inline="false" x="342" y="-10">
     <mutation></mutation>
     <field name="NAME">getDirection</field>
     <value name="RETURN">
@@ -187,7 +187,7 @@
       </block>
     </value>
   </block>
-  <block type="procedures_defreturn" id="207" inline="false" x="325" y="92">
+  <block type="procedures_defreturn" id="207" inline="false" x="349" y="90">
     <mutation></mutation>
     <field name="NAME">getDelay</field>
     <value name="RETURN">
@@ -198,7 +198,7 @@
         </value>
         <value name="B">
           <block type="math_number" id="232">
-            <field name="NUM">10</field>
+            <field name="NUM">50</field>
           </block>
         </value>
       </block>
