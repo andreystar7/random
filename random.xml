@@ -1,10 +1,4 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="variables_set" id="91" inline="true" x="519" y="104">
-    <field name="VAR">direction</field>
-  </block>
-  <block type="variables_get" id="167" x="535" y="154">
-    <field name="VAR">direction</field>
-  </block>
   <block type="oled_cleardisplay" id="137" x="183" y="203">
     <next>
       <block type="oled_setcursor" id="146" inline="true">
@@ -22,13 +16,13 @@
           <block type="oled_drawnumber" id="176" inline="true">
             <value name="NUMBER">
               <block type="math_arithmetic" id="121" inline="true">
-                <field name="OP">DIVIDE</field>
+                <field name="OP">MODULO</field>
                 <value name="A">
                   <block type="math_random" id="98"></block>
                 </value>
                 <value name="B">
                   <block type="math_number" id="128">
-                    <field name="NUM">25</field>
+                    <field name="NUM">4</field>
                   </block>
                 </value>
               </block>
