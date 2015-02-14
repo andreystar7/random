@@ -1,1 +1,10 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="movement_leftmotor" id="23" inline="true" x="294" y="60">
+    <value name="MOVLEFT">
+      <block type="math_number" id="30">
+        <field name="NUM">700000000000000</field>
+      </block>
+    </value>
+  </block>
+  <block type="math_random" id="7" x="277" y="142"></block>
+</xml>
