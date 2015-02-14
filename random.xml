@@ -1,35 +1,207 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_cleardisplay" id="137" x="183" y="203">
-    <next>
-      <block type="oled_setcursor" id="146" inline="true">
-        <value name="STARTX">
-          <block type="math_number" id="153">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="STARTY">
-          <block type="math_number" id="154">
-            <field name="NUM">0</field>
+  <block type="controls_repeat" id="362" inline="true" x="-25" y="-3">
+    <value name="TIMES">
+      <block type="math_number" id="369">
+        <field name="NUM">10</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="variables_set" id="197" inline="true">
+        <field name="VAR">direction</field>
+        <value name="VALUE">
+          <block type="procedures_callreturn" id="202">
+            <mutation name="getDirection"></mutation>
           </block>
         </value>
         <next>
-          <block type="oled_drawnumber" id="176" inline="true">
-            <value name="NUMBER">
-              <block type="math_arithmetic" id="121" inline="true">
-                <field name="OP">MODULO</field>
-                <value name="A">
-                  <block type="math_random" id="98"></block>
-                </value>
-                <value name="B">
-                  <block type="math_number" id="128">
-                    <field name="NUM">4</field>
-                  </block>
-                </value>
+          <block type="variables_set" id="242" inline="true">
+            <field name="VAR">delay</field>
+            <value name="VALUE">
+              <block type="procedures_callreturn" id="248">
+                <mutation name="getDelay"></mutation>
               </block>
             </value>
+            <next>
+              <block type="controls_if" id="260" inline="false">
+                <value name="IF0">
+                  <block type="logic_compare" id="273" inline="true">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="266">
+                        <field name="VAR">direction</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="280">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="movement_setmotors" id="290" inline="true">
+                    <value name="BOTHMOVLEFT">
+                      <block type="math_number" id="297">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                    <value name="BOTHMOVRIGHT">
+                      <block type="math_number" id="304">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="305" inline="false">
+                    <value name="IF0">
+                      <block type="logic_compare" id="306" inline="true">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="307">
+                            <field name="VAR">direction</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="308">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="movement_setmotors" id="309" inline="true">
+                        <value name="BOTHMOVLEFT">
+                          <block type="math_number" id="310">
+                            <field name="NUM">-1000</field>
+                          </block>
+                        </value>
+                        <value name="BOTHMOVRIGHT">
+                          <block type="math_number" id="311">
+                            <field name="NUM">-1000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id="329" inline="false">
+                        <value name="IF0">
+                          <block type="logic_compare" id="330" inline="true">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="331">
+                                <field name="VAR">direction</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="332">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="movement_setmotors" id="333" inline="true">
+                            <value name="BOTHMOVLEFT">
+                              <block type="math_number" id="334">
+                                <field name="NUM">1000</field>
+                              </block>
+                            </value>
+                            <value name="BOTHMOVRIGHT">
+                              <block type="math_number" id="335">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="336" inline="false">
+                            <value name="IF0">
+                              <block type="logic_compare" id="337" inline="true">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="338">
+                                    <field name="VAR">direction</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="339">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="movement_setmotors" id="340" inline="true">
+                                <value name="BOTHMOVLEFT">
+                                  <block type="math_number" id="341">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="BOTHMOVRIGHT">
+                                  <block type="math_number" id="342">
+                                    <field name="NUM">1000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="robot_delay" id="344" inline="true">
+                                <value name="DELAY">
+                                  <block type="variables_get" id="355">
+                                    <field name="VAR">delay</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>
+    </statement>
+    <next>
+      <block type="movement_stop" id="380"></block>
     </next>
+  </block>
+  <block type="procedures_defreturn" id="195" inline="false" x="314" y="-5">
+    <mutation></mutation>
+    <field name="NAME">getDirection</field>
+    <value name="RETURN">
+      <block type="math_arithmetic" id="121" inline="true">
+        <field name="OP">MODULO</field>
+        <value name="A">
+          <block type="math_random" id="98"></block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="128">
+            <field name="NUM">4</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="procedures_defreturn" id="207" inline="false" x="325" y="92">
+    <mutation></mutation>
+    <field name="NAME">getDelay</field>
+    <value name="RETURN">
+      <block type="math_arithmetic" id="223" inline="true">
+        <field name="OP">MULTIPLY</field>
+        <value name="A">
+          <block type="math_random" id="216"></block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="232">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+    </value>
   </block>
 </xml>
